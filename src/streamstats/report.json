@@ -1,0 +1,27 @@
+{
+    "top 5 sources of error": {
+        "database": 6,
+        "payment": 3,
+        "api": 2,
+        "auth": 2,
+        "server": 2
+    },
+    "first timestamp": "2026-10-20 09:00:00",
+    "last timestamp": "2026-10-22 00:39:00",
+    "total amount of events": 40,
+    "amount of events by level": {
+        "INFO": 15,
+        "DEBUG": 5,
+        "WARNING": 4,
+        "ERROR": 11,
+        "CRITICAL": 5
+    },
+    "amount of events by sources": {
+        "server": 7,
+        "database": 9,
+        "auth": 7,
+        "api": 6,
+        "payment": 6,
+        "cache": 5
+    }
+}
