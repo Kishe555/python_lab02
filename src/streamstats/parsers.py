@@ -1,10 +1,8 @@
 from datetime import datetime
 from os import SEEK_SET, SEEK_END
-from models import Log
-from src.streamstats.errors import InvalidTimestampError, InvalidLogError, StreamStatsError
+from streamstats.models import Log, validateLog
+from streamstats.errors import InvalidTimestampError, InvalidLogError, StreamStatsError
 import json
-
-from src.streamstats.models import validateLog
 
 
 class CSVIterator:
@@ -77,3 +75,5 @@ class JSONLIterator:
                     source = data["source"],
                     message = data["message"])
         return variable
+
+

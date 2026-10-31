@@ -1,5 +1,5 @@
 from typing import Any
-from models import Log
+from streamstats.models import Log
 from datetime import datetime
 
 
@@ -36,3 +36,13 @@ def counter_levels(events):
 
 def counter_sources(events):
     return counter(events, key=lambda elm: elm.source)
+
+
+def get_events(files, iterator_class):
+    for filename in files:
+        reader = iterator_class(filename)
+
+        try:
+            yield from reader
+        finally:
+            reader.fp.close()

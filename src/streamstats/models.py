@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from src.streamstats.errors import InvalidLogError, InvalidTimestampError
+from streamstats.errors import InvalidLogError, InvalidTimestampError
 
 
 @dataclass
