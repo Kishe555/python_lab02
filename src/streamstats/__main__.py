@@ -1,3 +1,5 @@
+from time import sleep
+
 from streamstats.parsers import CSVIterator,  JSONLIterator
 from streamstats.analysis import top_error_sources, time_range, counter_sources, counter_levels, counter_all, \
      get_events
@@ -71,7 +73,8 @@ def main() -> None:
 
      analyzer_parser.add_argument("--format",  required=True, choices=["csv", "jsonl"])
      analyzer_parser.add_argument("--output",  required=True)
-     analyzer_parser.add_argument("--skip-invalid", action="store_true")
+     analyzer_parser.add_argument("--skip-invalid", action="store_false")
+     analyzer_parser.add_argument("--follow-file", action="store_false")
      args = parser.parse_args()
 
      iterator_class = (CSVIterator if args.format == "csv" else JSONLIterator)
@@ -79,4 +82,8 @@ def main() -> None:
      reporter(args.input ,iterator_class, args.output)
 
 if __name__ == "__main__":
+    z = open("report777.json", "r", encoding="utf-8")
+    while True:
+        print(z.readline())
+        sleep(1)
     main()
